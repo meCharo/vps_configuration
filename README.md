@@ -11,5 +11,6 @@ Centos 7.2, which just influence the part of preparation, like `yum update` and 
 Use the the screen to run the script as following:
 ``` bash
 yum install screen -y
+wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/vps_installation.sh
 screen -S install bash vps_installation.sh
 ```
