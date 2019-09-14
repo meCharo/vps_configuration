@@ -26,6 +26,8 @@ ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
+systemctl start shadowsocks
+systemctl enable shadowsocks
 
 # download tools: youtube-dl
 ## youtube-dl
