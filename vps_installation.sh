@@ -1,0 +1,60 @@
+# preparation
+yum update -y
+yum install wget
+yum install gcc
+yum install gcc-c++
+yum install make
+
+# shadowsocks
+## python
+cd /root && mkdir temp && cd /root/temp
+curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
+python get-pip.py
+## shadowsocks
+pip install shadowsocks
+echo -e "{\"server\": \"0.0.0.0\",
+  \"server_port\": 25000,
+  \"password\": \"changhao\",
+  \"method\": \"aes-256-cfb\"
+}" > /etc/shadowsocks.json
+echo -e "[Unit]
+Description=Shadowsocks
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json
+
+[Install]
+WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
+
+# download tools: youtube-dl
+## youtube-dl
+wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+chmod a+rx /usr/local/bin/youtube-dl
+## yasm
+cd /root/temp
+wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
+tar -zxvf yasm-1.3.0.tar.gz
+cd yasm-1.3.0
+./configure
+make
+make install
+cd /root/temp && rm -rf yasm-1.3.0 && rm -rf yasm-1.3.0.tar.gz
+## ffmpeg
+cd /root/temp
+wget http://www.ffmpeg.org/releases/ffmpeg-3.3.3.tar.gz
+tar -zxvf ffmpeg-3.3.3.tar.gz
+cd ffmpeg-3.3.3
+./configure
+make
+make install
+cd /root/temp && rm -rf ffmpeg-3.3.3 && rm -rf ffmpeg-3.3.3.tar.gz
+
+# upload tools: BaiduPCS
+cd /root/temp
+wget https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-linux-amd64.zip
+unzip BaiduPCS-Go-v3.5.6-linux-amd64.zip
+mv /root/BaiduPCS-Go-v3.5.6-linux-amd64 /usr/local/bin/BaiduPCS-Go
+chmod a+rx /usr/local/bin/BaiduPCS-Go
+rm -rf BaiduPCS-Go-v3.5.6-linux-amd64.zip
+# BaiduPCS-Go u ... /hypnosis_download
