@@ -56,7 +56,11 @@ cd /root/temp && rm -rf ffmpeg-3.3.3 && rm -rf ffmpeg-3.3.3.tar.gz
 cd /root/temp
 wget https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-linux-amd64.zip
 unzip BaiduPCS-Go-v3.5.6-linux-amd64.zip
-mv /root/BaiduPCS-Go-v3.5.6-linux-amd64 /usr/local/bin/BaiduPCS-Go
+mv BaiduPCS-Go-v3.5.6-linux-amd64 /usr/local/bin/BaiduPCS-Go
 chmod a+rx /usr/local/bin/BaiduPCS-Go
-rm -rf BaiduPCS-Go-v3.5.6-linux-amd64.zip
+cd /root/temp && rm -rf BaiduPCS-Go-v3.5.6-linux-amd64 && rm -f BaiduPCS-Go-v3.5.6-linux-amd64.zip
 # BaiduPCS-Go u ... /hypnosis_download
+
+# post-installation
+cd /root && rm -rf temp && rm -f vps_installation.sh
+
