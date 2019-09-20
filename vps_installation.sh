@@ -26,8 +26,15 @@ ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
+## firework and enable startup
+firewall-cmd --permanent --add-port=25000/tcp # only centos7
+firewall-cmd --reload # reload after modify
+# iptables -A INPUT -p tcp --dport 1024 -j ACCEPT # only centos6
+# systemctl stop firewalld
+# systemctl disable firewalld
 systemctl start shadowsocks
 systemctl enable shadowsocks
+
 
 # download tools: youtube-dl
 ## youtube-dl
@@ -52,6 +59,7 @@ make
 make install
 cd /root/temp && rm -rf ffmpeg-3.3.3 && rm -rf ffmpeg-3.3.3.tar.gz
 
+
 # upload tools: BaiduPCS
 cd /root/temp
 wget https://github.com/iikira/BaiduPCS-Go/releases/download/v3.5.6/BaiduPCS-Go-v3.5.6-linux-amd64.zip
@@ -61,6 +69,7 @@ chmod a+rx /usr/local/bin/BaiduPCS-Go_bin
 ln -s /usr/local/bin/BaiduPCS-Go_bin/BaiduPCS-Go /usr/local/bin/BaiduPCS-Go
 cd /root/temp && rm -f BaiduPCS-Go-v3.5.6-linux-amd64.zip
 # BaiduPCS-Go u ... /hypnosis_download
+
 
 # post-installation
 cd /root && rm -rf temp && rm -f vps_installation.sh
