@@ -1,9 +1,9 @@
 # preparation
 yum update -y
-yum install wget
-yum install gcc
-yum install gcc-c++
-yum install make
+yum install wget -y
+yum install gcc -y
+yum install gcc-c++ -y
+yum install make -y
 
 # shadowsocks
 ## python
