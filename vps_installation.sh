@@ -22,7 +22,7 @@ WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
 ## firework and enable startup
 firewall-cmd --permanent --add-port=25000/tcp # only centos7
 firewall-cmd --reload # reload after modify
-# iptables -A INPUT -p tcp --dport 1024 -j ACCEPT # only centos6
+# iptables -A INPUT -p tcp --dport 25000 -j ACCEPT # only centos6
 # systemctl stop firewalld
 # systemctl disable firewalld
 systemctl start shadowsocks
@@ -33,7 +33,7 @@ systemctl enable shadowsocks
 wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
 chmod a+rx /usr/local/bin/youtube-dl
 ## yasm
-cd /root/temp
+mkdir /root/temp && cd /root/temp
 wget http://www.tortall.net/projects/yasm/releases/yasm-1.3.0.tar.gz
 tar -zxvf yasm-1.3.0.tar.gz
 cd yasm-1.3.0
