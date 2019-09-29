@@ -1,14 +1,10 @@
 # preparation
 yum update -y
-yum install wget gcc gcc-c++ make unzip -y
+yum install wget gcc gcc-c++ make unzip python36 -y
 
 # shadowsocks
-## python
-cd /root && mkdir temp && cd /root/temp
-curl "https://bootstrap.pypa.io/get-pip.py" -o "get-pip.py"
-python get-pip.py
 ## shadowsocks
-pip install shadowsocks
+pip3 install shadowsocks
 echo -e "{\"server\": \"0.0.0.0\",
   \"server_port\": 25000,
   \"password\": \"changhao\",
@@ -19,7 +15,7 @@ Description=Shadowsocks
 
 [Service]
 TimeoutStartSec=0
-ExecStart=/usr/bin/ssserver -c /etc/shadowsocks.json
+ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks.json
 
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
@@ -31,7 +27,6 @@ firewall-cmd --reload # reload after modify
 # systemctl disable firewalld
 systemctl start shadowsocks
 systemctl enable shadowsocks
-
 
 # download tools: youtube-dl
 ## youtube-dl
