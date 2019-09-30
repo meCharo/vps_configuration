@@ -11,6 +11,7 @@ Centos 7.2, which just influence the part of preparation, like `yum update` and 
 Use the the screen to run the script as following:
 ``` bash
 yum install screen -y
+echo -e "defutf8 on\ndefencoding utf8\nencoding UTF-8 UTF-8" > ~/.screenrc
 wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/vps_installation.sh
 screen -S install bash vps_installation.sh
 ```
