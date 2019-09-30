@@ -24,9 +24,10 @@ ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks.json
 [Install]
 WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
 #--firework and enable startup--
-firewall-cmd --permanent --add-port=25000/tcp # only centos7
-firewall-cmd --reload # reload after modify
+# firewall-cmd --permanent --add-port=25000/tcp # only centos7
+# firewall-cmd --reload # reload after modify
 # iptables -A INPUT -p tcp --dport 25000 -j ACCEPT # only centos6
+# chkconfig iptables off
 # systemctl stop firewalld
 # systemctl disable firewalld
 systemctl start shadowsocks
