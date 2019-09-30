@@ -6,7 +6,8 @@ Centos 7.2, which just influence the part of preparation, like `yum update` and 
 1. shadowsocks
 2. youtube-dl
 3. ffmpeg
-4. BaiduPCS
+4. gdrive
+5. BaiduPCS
 # Advise
 Use the the screen to run the script as following:
 ``` bash
