@@ -3,38 +3,53 @@
 #################################
 yum update -y
 yum install wget gcc gcc-c++ make unzip python36 -y
-
-#################################
-#############proxy###############
-#################################
-#---------shadowsocks------------
-pip3 install shadowsocks
-echo -e "{\"server\": \"0.0.0.0\",
-  \"server_port\": 25000,
-  \"password\": \"changhao\",
-  \"method\": \"aes-256-cfb\"
-}" > /etc/shadowsocks.json
-echo -e "[Unit]
-Description=Shadowsocks
-
-[Service]
-TimeoutStartSec=0
-ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks.json
-
-[Install]
-WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
-#--firework and enable startup--
+#----------firework--------------
 # firewall-cmd --permanent --add-port=25000/tcp # only centos7
 # firewall-cmd --reload # reload after modify
 # iptables -A INPUT -p tcp --dport 25000 -j ACCEPT # only centos6
 # chkconfig iptables off
 # systemctl stop firewalld
 # systemctl disable firewalld
-systemctl start shadowsocks
-systemctl enable shadowsocks
-# V2Ray
-curl -Ls https://install.direct/go.sh | sudo bash
 
+#################################
+#############proxy###############
+#################################
+your_name="v2ray2"
+if [ $your_name == "shadowsocks" ];then
+  echo "shadowsocks"
+elif [ $your_name == "v2ray" ];then
+  echo "v2ray"
+else
+  echo $your_name
+  exit 1
+fi
+#---------shadowsocks------------
+if $[your_name] -eq "shadowsocks";then
+  pip3 install shadowsocks
+  echo -e "{\"server\": \"0.0.0.0\",
+    \"server_port\": 25000,
+    \"password\": \"changhao\",
+    \"method\": \"aes-256-cfb\"
+  }" > /etc/shadowsocks.json
+  echo -e "[Unit]
+  Description=Shadowsocks
+
+  [Service]
+  TimeoutStartSec=0
+  ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks.json
+
+  [Install]
+  WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
+  systemctl enable shadowsocks
+  systemctl start shadowsocks
+else
+#------------V2Ray---------------
+  curl -Ls https://install.direct/go.sh | sudo bash
+  rm -f go.sh
+  wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/config.json -O /etc/v2ray/config.json
+  systemctl enable v2ray
+  systemctl start v2ray
+fi
 
 #################################
 ########download tools###########
