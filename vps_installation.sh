@@ -27,7 +27,7 @@ if [ $your_name == "shadowsocks" ];then
 elif [ $your_name == "v2ray" ];then
   curl -Ls https://install.direct/go.sh | sudo bash
   rm -f go.sh
-  wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/config.json -O /etc/v2ray/config.json
+  wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/v2ray/config.json -O /etc/v2ray/config.json
   systemctl enable v2ray
   systemctl start v2ray
 else
