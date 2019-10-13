@@ -32,6 +32,9 @@ WantedBy=multi-user.target" > /etc/systemd/system/shadowsocks.service
 # systemctl disable firewalld
 systemctl start shadowsocks
 systemctl enable shadowsocks
+# V2Ray
+curl -Ls https://install.direct/go.sh | sudo bash
+
 
 #################################
 ########download tools###########
