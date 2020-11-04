@@ -63,9 +63,9 @@ make
 make install
 cd /root/temp && rm -rf ffmpeg-3.3.3 && rm -rf ffmpeg-3.3.3.tar.gz
 #------------gdrive--------------
-wget -O gdrive https://sites.google.com/site/wun913/Home/gdrive-linux-x64
-mv gdrive /usr/bin/gdrive
-chmod +x /usr/bin/gdrive
+# wget -O gdrive https://sites.google.com/site/wun913/Home/gdrive-linux-x64
+# mv gdrive /usr/bin/gdrive
+# chmod +x /usr/bin/gdrive
 # Usage: https://github.com/gdrive-org/gdrive
 # Usage: gdrive about->gdrive list->gdrive download ..
 
@@ -73,13 +73,13 @@ chmod +x /usr/bin/gdrive
 ###########upload tools##########
 #################################
 #------------BaiduPCS------------
-cd /root/temp
-wget https://github.com/iikira/BaiduPCS-Go/releases/download/v3.6/BaiduPCS-Go-v3.6-linux-amd64.zip
-unzip BaiduPCS-Go-v3.6-linux-amd64.zip
-mv BaiduPCS-Go-v3.6-linux-amd64 /usr/local/bin/BaiduPCS-Go_bin
-chmod a+rx /usr/local/bin/BaiduPCS-Go_bin
-ln -s /usr/local/bin/BaiduPCS-Go_bin/BaiduPCS-Go /usr/local/bin/BaiduPCS-Go
-cd /root/temp && rm -f BaiduPCS-Go-v3.6-linux-amd64.zip
+# cd /root/temp
+# wget https://github.com/iikira/BaiduPCS-Go/releases/download/v3.6/BaiduPCS-Go-v3.6-linux-amd64.zip
+# unzip BaiduPCS-Go-v3.6-linux-amd64.zip
+# mv BaiduPCS-Go-v3.6-linux-amd64 /usr/local/bin/BaiduPCS-Go_bin
+# chmod a+rx /usr/local/bin/BaiduPCS-Go_bin
+# ln -s /usr/local/bin/BaiduPCS-Go_bin/BaiduPCS-Go /usr/local/bin/BaiduPCS-Go
+# cd /root/temp && rm -f BaiduPCS-Go-v3.6-linux-amd64.zip
 # Usage: BaiduPCS-Go login->BaiduPCS-Go u->BaiduPCS-Go download
 
 # post-installation
