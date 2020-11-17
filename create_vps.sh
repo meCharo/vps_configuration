@@ -81,4 +81,5 @@ systemctl start vsftpd.service
 #######post-installation#########
 #################################
 cd /root && rm -rf temp && rm -f create_vps.sh
+echo "conda activate py" >> $HOME/.bashrc
 
