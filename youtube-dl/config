@@ -8,3 +8,6 @@
 
 # download the best video
 -f best
+
+# download archive
+--download-archive youtube-archive.txt
