@@ -66,6 +66,8 @@ fi
 #---------youtube-dl-------------
 conda install ffmpeg -y
 pip install youtube-dl
+mkdir $HOME/.config/youtube-dl
+wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/youtube-dl/config -O $HOME/.config/youtube-dl/config
 
 
 #################################
