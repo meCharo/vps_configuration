@@ -1,0 +1,10 @@
+# Lines starting with # are comments
+
+# Save all videos under Movies directory in your home directory
+-o %(upload_date)s-%(id)s-%(title)s.%(ext)s
+
+# continue download
+-c
+
+# download the best video
+-f best
