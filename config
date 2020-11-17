@@ -1,0 +1,4 @@
+# Lines starting with # are comments
+
+# Save all videos under Movies directory in your home directory
+-o %(upload_date)s-%(id)s-%(uploader)s-%(title)s.%(ext)s
