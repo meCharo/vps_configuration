@@ -4,9 +4,9 @@
 #########preparation#############
 #################################
 mkdir /root/temp && cd /root/temp
-yum update -y
+yum update -y -q
 #-----------system---------------
-yum install -y zip unzip wget
+yum install -y -q zip unzip wget
 echo "export LC_ALL=en_US.UTF-8" >> $HOME/.bashrc
 echo "export LANG=en_US.UTF-8" >> $HOME/.bashrc
 
@@ -73,7 +73,7 @@ wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/youtube-
 #################################
 ########transfer tools###########
 #################################
-yum -y install vsftpd
+yum -y -q install vsftpd
 systemctl start vsftpd.service
 
 
