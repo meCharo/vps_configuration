@@ -13,6 +13,6 @@ Use the the screen to run the script as following:
 ``` bash
 yum install screen wget -y
 echo -e "defutf8 on\ndefencoding utf8\nencoding UTF-8 UTF-8" > ~/.screenrc
-wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/vps_installation.sh
-screen -S install bash vps_installation.sh
+wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/create_vps.sh
+screen -S install bash create_vps.sh
 ```
