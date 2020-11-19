@@ -10,4 +10,4 @@
 -f best
 
 # download archive
-# --download-archive youtube-archive.txt
+# --download-archive youtube_archive.txt
