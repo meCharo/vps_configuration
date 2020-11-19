@@ -9,6 +9,7 @@ yum update -y
 yum install -y zip unzip wget
 echo "export LC_ALL=en_US.UTF-8" >> $HOME/.bashrc
 echo "export LANG=en_US.UTF-8" >> $HOME/.bashrc
+echo "alias zip='zip -q -r'" >> $HOME/.bashrc
 
 #----------firework--------------
 # firewall-cmd --permanent --add-port=25000/tcp # only centos7
