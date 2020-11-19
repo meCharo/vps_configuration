@@ -6,7 +6,7 @@
 mkdir /root/temp && cd /root/temp
 yum update -y
 #-----------system---------------
-yum install -y zip unzip wget
+yum install -y zip unzip wget git
 echo "export LC_ALL=en_US.UTF-8" >> $HOME/.bashrc
 echo "export LANG=en_US.UTF-8" >> $HOME/.bashrc
 echo "alias zip='zip -q -r'" >> $HOME/.bashrc
