@@ -27,15 +27,15 @@ systemctl disable firewalld
 #################################
 ########### python ##############
 #################################
-cd /root/temp
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda3.sh
-bash Miniconda3.sh -b -p $HOME/Applications/miniconda
-source $HOME/Applications/miniconda/bin/activate
-conda init
-source ~/.bashrc
-conda create -n py python=3.6 -y
-conda activate py
-cd /root/temp && rm -rf Miniconda3.sh
+# cd /root/temp
+# wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O Miniconda3.sh
+# bash Miniconda3.sh -b -p $HOME/Applications/miniconda
+# source $HOME/Applications/miniconda/bin/activate
+# conda init
+# source ~/.bashrc
+# conda create -n py python=3.6 -y
+# conda activate py
+# cd /root/temp && rm -rf Miniconda3.sh
 
 
 #################################
@@ -67,5 +67,5 @@ fi
 #################################
 #######post-installation#########
 #################################
-cd /root && rm -rf temp && rm -f create_vps.sh
-echo "conda activate py" >> $HOME/.bashrc
+cd /root && rm -rf temp && rm -f create_vps_mini.sh
+# echo "conda activate py" >> $HOME/.bashrc
