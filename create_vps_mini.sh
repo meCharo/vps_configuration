@@ -8,6 +8,7 @@
 #########preparation#############
 #################################
 mkdir /root/temp && cd /root/temp
+mkdir $HOME/Applications
 yum update -y
 #-----------system---------------
 yum install -y zip unzip wget git
