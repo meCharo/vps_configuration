@@ -51,7 +51,7 @@ if [ $your_name == "shadowsocks" ];then
   systemctl start shadowsocks
 #------------V2Ray---------------
 elif [ $your_name == "v2ray" ];then
-  wget https://github.com/v2ray/v2ray-core/releases/download/v4.23.3/v2ray-linux-64.zip
+  wget https://github.com/meCharo/vps_configuration/releases/download/v4.23.3/v2ray-linux-64.zip
   unzip -d $HOME/Applications/v2ray v2ray-linux-64.zip
   chmod -R 777 $HOME/Applications/v2ray
   wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/v2ray/config.json -O $HOME/Applications/v2ray/myconfig.json
