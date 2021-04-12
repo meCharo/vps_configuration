@@ -57,6 +57,7 @@ elif [ $your_name == "v2ray" ];then
   wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/v2ray/config.json -O $HOME/Applications/v2ray/myconfig.json
 #   systemctl enable v2ray
 #   systemctl start v2ray
+  screen -dmS v2ray /root/Applications/v2ray/v2ray -config /root/Applications/v2ray/myconfig.json
 else
   echo $your_name
   exit 1
