@@ -51,14 +51,12 @@ if [ $your_name == "shadowsocks" ];then
   systemctl start shadowsocks
 #------------V2Ray---------------
 elif [ $your_name == "v2ray" ];then
-#   curl -Ls https://install.direct/go.sh | sudo bash
-  curl -O https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh
-  bash install-release.sh
-  rm -f install-release.sh
-#   wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/v2ray/config.json -O /etc/v2ray/config.json
-  wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/v2ray/config.json -O /usr/local/etc/v2ray/config.json
-  systemctl enable v2ray
-  systemctl start v2ray
+  wget https://github.com/v2ray/v2ray-core/releases/download/v4.23.3/v2ray-linux-64.zip
+  unzip -d $HOME/Applications/v2ray v2ray-linux-64.zip
+  chmod -R 777 $HOME/Applications/v2ray
+  wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/v2ray/config.json -O $HOME/Applications/v2ray/myconfig.json
+#   systemctl enable v2ray
+#   systemctl start v2ray
 else
   echo $your_name
   exit 1
