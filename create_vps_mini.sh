@@ -34,7 +34,7 @@ systemctl disable firewalld
 # source $HOME/Applications/miniconda/bin/activate
 # conda init
 # source ~/.bashrc
-# conda create -n py python=3.6 -y
+# conda create -n py python=3.8 -y
 # conda activate py
 # cd /root/temp && rm -rf Miniconda3.sh
 
@@ -48,6 +48,10 @@ if [ $your_name == "shadowsocks" ];then
   pip3 install shadowsocks
   wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/shadowsocks/shadowsocks.json -O /etc/shadowsocks.json
   wget https://raw.githubusercontent.com/meCharo/vps_configuration/master/shadowsocks/shadowsocks.service -O /etc/systemd/system/shadowsocks.service
+  cd /root/Applications/miniconda/envs/py/lib/python3.8/site-packages/shadowsocks/crypto
+  sed -i 's/libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)/libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)/' openssl.py
+  sed -i 's/libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)/libcrypto.EVP_CIPHER_CTX_reset(self._ctx)/' openssl.py
+  cd /root/temp
   systemctl enable shadowsocks
   systemctl start shadowsocks
 #------------V2Ray---------------
