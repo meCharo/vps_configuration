@@ -3,7 +3,7 @@
 
   [Service]
   TimeoutStartSec=0
-  ExecStart=/usr/local/bin/ssserver -c /etc/shadowsocks.json
+  ExecStart=/root/Applications/miniconda/envs/py/bin/ssserver -c /etc/shadowsocks.json
 
   [Install]
   WantedBy=multi-user.target
