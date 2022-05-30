@@ -1,20 +1,33 @@
 {
-  "inbounds": [
-    {
-    "port": 25000,
-    "protocol": "vmess",
-    "settings": {
-      "clients": [{
-          "id": "0b63da48-040f-4d35-a4c8-35e3d08c3a73",
-          "level": 0,
-          "alterId": 0,
-          "security": "auto"
-        }]
-      }
-    }  
- ],
-  "outbounds": [{
-    "protocol": "freedom",
-    "settings": {}
-  }]
+    "inbounds": [
+        {
+            "port": 25000, // 服务器监听端口
+            "protocol": "vless", // 主传入协议
+            "settings": {
+                "clients": [
+                    {
+                        "id": "e8e7a64b-201e-4c6b-b333-a95bd4942ca5",
+                        "level": 0
+                        // "alterId": 0
+                        // "email": "love@v2ray.com"
+                    }
+                ],
+                "decryption": "none"
+                // "default": {
+                //     "level": 0,
+                //     "alterId": 0
+                // },
+                // "detour": {
+                //     "to": "tag_to_detour"
+                // },
+                // "disableInsecureEncryption": false
+            }
+        }
+    ],
+    "outbounds": [
+        {
+            "protocol": "freedom", // 主传出协议
+            "settings": {}
+        }
+    ]
 }
