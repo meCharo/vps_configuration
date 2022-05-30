@@ -16,5 +16,5 @@
   "outbounds": [{
     "protocol": "freedom",
     "settings": {}
-  }],
+  }]
 }
