@@ -6,8 +6,9 @@
     "settings": {
       "clients": [{
           "id": "0b63da48-040f-4d35-a4c8-35e3d08c3a73",
-          "level": 1,
-          "alterId": 64
+          "level": 0,
+          "alterId": 0,
+          "security": "auto",
         }]
       }
     }  
@@ -15,18 +16,5 @@
   "outbounds": [{
     "protocol": "freedom",
     "settings": {}
-  },{
-    "protocol": "blackhole",
-    "settings": {},
-    "tag": "blocked"
   }],
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "ip": ["geoip:private"],
-        "outboundTag": "blocked"
-      }
-    ]
-  }
 }
